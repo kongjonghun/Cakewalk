@@ -1,0 +1,507 @@
+:root {
+   /* Cake Walk */
+   --color-orange:#ea5743;
+   --color-grey: #a3a3a3;
+   --color-light-orange:#fce6e3;
+
+    /* Color */
+    --color-white: #ffffff;
+    --color-light-white: #eeeeee;
+    --color-dark-white: #bdbdbd;
+    --color-pink: #fe918d;
+    --color-dark-pink: #ff6863;
+    --color-dark-grey: #4d4d4d;
+    --color-grey: #616161;
+    --color-light-grey: #7c7979;
+    --color-blue: #73aace;
+    --color-yellow: #fff7d1;
+    --color-black: #000000;
+
+    /* Font size */
+  
+    --font-large: 48px;
+    --font-medium: 28px;
+    --font-regular: 18px;
+    --font-small: 16px;
+    --font-micro: 10px;
+  
+    /* Font weight */
+  
+    --weight-bold: 700;
+    --weight-semi-bold: 600;
+    --weight-regular: 400;
+
+    /* Size */
+    --size-border-radius : 4px;
+
+    /* Animation */
+    --animation-duration: 300ms;
+}
+
+
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    margin:0;
+}
+*:focus { outline:none; }
+ul{
+    padding-left: 0;
+}
+li{
+    list-style: none;
+    color:var(--color-black);
+}
+a{
+    text-decoration: none;
+    color:var(--color-black);
+}
+h3,h4,h5{
+    font-weight: normal;
+    margin:0;
+}
+button{
+    cursor:pointer;
+}
+.modal{
+    position:fixed;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    top:-150px;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+.hidden{
+    display:none
+}
+.modal_overlay{
+    background-color: rgba(0,0,0,0.6);
+    width:100%;
+    height:200%;
+    position: absolute;
+    z-index: 10;
+}
+
+.modal_content{
+    background-color: var(--color-white);
+    position: relative;
+    text-align:center;
+    width:440px;
+    height:630px;
+    top:150px;
+    z-index:20;
+}
+
+.signInup ul{
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    height:100%;
+}
+.signInup .btn_exit{
+    position: relative;
+    float:right;
+    padding:15px 20px;
+    border:none;
+    background-color: var(--color-white);
+    color:var(--color-orange);
+    font-size: var(--font-regular);
+}
+.signInup ul li .logo_icon{
+    position: relative;
+    width:110px;
+    height:120px;
+    top:-30px;
+}
+.signInup ul li .logo_name{
+    position: relative;
+    top:-70px;
+    width:160px;
+    height:50px;
+}
+.modal_content .borderline{
+    position: relative;
+    margin-left: 52px;
+    width:350px;
+    height:3px;
+    border-radius: 40px;
+    background-color:var(--color-orange);
+    opacity: 0.5;
+    top:-60px;
+}
+
+.signIn_input input{
+    position: relative;
+    width:230px;
+    height:30px;
+    margin-bottom: 15px;
+    border: 1.5px solid var(--color-dark-white);
+    border-radius: 2px;
+    top:-50px;
+}
+.signIn_input .btn_login{
+    position: relative;
+    margin-top: 50px;
+    padding: 20px 90px;
+    border-radius: 30px;
+    background-color: var(--color-orange);
+    color:var(--color-white);
+    border:none;
+    font-size:var(--font-regular);
+    font-weight: bolder;
+    top:-80px;
+}
+.signIn_input{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.signIn_input ul{
+    display: flex;
+    top:-80px;
+}
+.signIn_input ul li{
+    padding:10px;
+    position: relative;
+    top:-70px;
+}
+
+.signIn_input h4{
+    position: relative;
+    color:var(--color-dark-white);
+    top:-60px;
+}
+.social_login{
+    display:flex;
+    justify-content: center;
+}
+.social_login img{
+    width:32px;
+    height:32px;
+    position: relative;
+    padding:12px;
+    top:-60px;
+}
+
+
+/* 헤더 영역 */
+
+header{
+    display:flex;
+    justify-content: space-around;
+    padding-top: 10px;
+}
+header .header_logo img{
+    width:132px;
+    height:42px;
+    margin-top: 8px;
+}
+.header_menu{
+    padding-right: 300px;
+}
+.header_menu ul{
+    display:flex;
+}
+.header_menu li{
+    color:var(--color-black);
+    padding-right: 80px;
+}
+.header_right ul{
+    display:flex;
+}
+.header_right li{
+    padding-left: 30px;
+}
+.header_right li i{
+    padding:5px;
+}
+
+/* 메인이벤트 */
+
+.main_event {
+    position:relative;
+    }
+.main_event_container{
+    padding:0;
+    width : 100%;
+    position : absolute;
+    top : 10px;
+}
+.main_event .slick-dots{
+    position : absolute;
+    left:7%;
+    bottom:10%;
+
+}
+.main_event .slick-dots li{
+    list-style: none;
+    width : 12px;
+    height : 12px;
+    background-color:  #000000 ;
+    border-color: #FFFFFF;
+    border-style :solid;
+    border-width : 1.1px;
+    
+    border-radius : 50%;
+    display : inline-block;
+    
+    margin : 10px; 
+}
+.main_event .slick-dots li button{
+    display : none;
+}
+
+.main_event .slick-dots li.slick-active {
+    background-color: #FFFFFF; 
+    border-color: #FFFFFF;
+    border-style :solid;
+}
+.main_event .go_button{
+    position: relative;
+    color:var(--color-white);
+    border: 1px solid white;
+    border-radius: 8px;
+    font-size: var(--font-medium);
+    bottom:260px;
+    left:10%;
+    padding: 20px 40px;
+    background: transparent;
+    /* background:var(--color-black);  */
+    cursor: pointer;
+}
+
+.main_event img{
+    width:100%;
+    height: 100%;
+}
+/* 인기상품 */
+.hot_product_line{
+    margin: 0 150px;
+}
+
+.hot_product .hot_store{
+    padding-bottom: 10px;
+}
+
+.hot_product img{
+    height:230px; width:230px;
+    margin-left:10px;
+}
+.hot_product .hot_product_title{
+    padding: 0 0 20px 10px;
+    color: var(--color-grey);
+    color:var(--color-black);
+}
+.hot_product .slick-dots{
+    position : relative;
+    float:right;
+    bottom: 340px;
+    z-index : 1;
+}
+.hot_product .slick-dots li{
+list-style: none;
+width : 10px;
+height : 10px;
+background-color: var(--color-grey) ;
+border-radius : 50%;
+display : inline-block;
+margin : 10px; 
+}
+.hot_product .slick-dots li button{
+    display : none;
+}
+
+.hot_product .slick-dots li.slick-active {
+    background-color:var(--color-orange); 
+}
+.hot_product_store_description{
+    display:flex;
+    padding-left:10px;
+}
+.hot_product_store_description .description_store h5{
+    padding-top:5px;
+    color:var(--color-dark-white);
+}
+.hot_product_store_description .description_store h4{
+    padding-top:3px;
+    color:var(--color-dark-white);
+}
+.hot_product_price{
+    position: relative;
+    top:27px;
+    left:45px
+}
+/* 슬라이드 로고 영역 */
+.inter_logo{
+    margin-bottom: 100px;
+}
+.thisweek_title{
+    display:flex;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    left:35%;
+}
+.thisweek_title h1{
+    padding-top: 20px;
+    font-size:var(--font-large)
+}
+.thisweek_title h3{
+    position: absolute;
+    /* left:25%; */
+    bottom:5px;
+}
+.thisweek_title_logo{
+    display:flex;
+    justify-content: center;
+}
+.thisweek_title .character{
+    position: relative;
+    width:50px;
+    height:50px;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    left:-10px;
+    top:70px;
+}
+.thisweek_title .character_blue {
+    position: relative;
+    width:50px;
+    height:50px;
+    left:10px;
+    top:70px;
+}
+/* 슬라이드 영역 */
+.thisweek{
+    background-color: var(--color-light-orange) ;
+    width:100%
+}
+.thisweek_line{
+    padding-top:100px;
+    padding-left:100px;
+}
+
+.thisweek .store1_slide img{
+    height:230px; width:230px;
+    margin-left:0px;
+}
+.thisweek .store1_slide {
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 80px;
+}
+.thisweek .store1_slide button {
+    position: absolute; z-index: 2; top:40%; transform: translateY(-50%);
+    width:70px; height:70px; border-radius: 100%; background:rgba(0,0,0,0);
+    border:none;
+}
+.store1_slide button:before {color:#fff; font-size:50px; font-family:'xeicon'}
+.store1_slide button.slick-prev {left:-80px; font-size:0; color:transparent; border:none; }
+.store1_slide button.slick-prev:before {content:"\e93c"; }
+.store1_slide button.slick-next {right:50px; font-size:0; color:transparent; border:none;}
+.store1_slide button.slick-next:before {content:"\e93f"; }
+
+.store1_slide .slick-dots{
+    position : absolute;
+    right : 80px;
+    bottom: 300px;
+    z-index : 2;
+}
+.store1_slide .slick-dots li{
+list-style: none;
+width : 8px;
+height : 8px;
+background-color: var(--color-grey) ;
+border-color: #FFFFFF;
+border-style :solid;
+border-width : 1.1px;
+border-radius : 50%;
+display : inline-block;
+margin : 10px; 
+}
+.store1_slide .slick-dots li button{
+    display : none;
+}
+.store1_slide .slick-dots li.slick-active {
+    background-color:var(--color-orange); 
+    border-color: var(--color-orange);
+    border-style :solid;
+}
+/* 키워드 */
+.popular_keyword_background{
+    padding:75px;
+}
+.popular_keyword_background h3{
+    padding-left:30px;
+}
+.popular_keyword_ul{
+    display: flex;
+    justify-content: space-around;
+}
+.popular_keyword_li{
+    margin : 20px 0 ;
+    width : 180px;
+    background-color: var(--color-white); 
+    border: 1px solid var(--color-orange);
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+/* 입점문의 */
+.import_store{
+    background-image: url(images/main_illust.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding:75px 0;
+    margin-bottom: 100px;
+}
+
+.import_store button{
+    float:right;
+    display:relative;
+    margin:-15px 250px 0 0;
+    border: 1px solid var(--color-black);
+    background-color: rgb(0,0,0,0);
+    padding: 10px 20px;
+}
+footer{
+    background-color: var(--color-light-orange) ;
+    font-size: var(--font-small);
+    padding-bottom: 20px;
+}
+footer .footer_line{
+    margin:0 100px;
+}
+.footer_description{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+.footer_description ul {
+    display: flex;
+    margin: 0;
+} 
+.footer_description .footer_story li{
+    padding-right:50px;
+}
+.footer_description .footer_icon li{
+    padding-right:30px;
+    font-size: var(--font-medium);
+}
+footer .footer_company ul{
+    display:flex;
+}
+footer .footer_company ul li{
+    padding-right:25px;
+}
+footer .footer_address ul{
+    display:flex;
+}
+footer .footer_address ul li{
+    padding-right:30px;
+}
+footer .footer_sentence li{
+    padding-bottom:10px;
+}
