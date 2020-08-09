@@ -1,4 +1,6 @@
 {% load static %}
+{% load socialaccount %}
+{% providers_media_js %} 
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -47,10 +49,10 @@
                         </div>
                     </form>
                     <div class="social_login">
-                        <a href=""><img src="{% static 'images/logo/google_login.png' %}" alt=""></a>
-                        <a href=""><img src="{% static 'images/logo/kakao_login.png' %}" alt=""></a>
-                        <a href=""><img src="{% static 'images/logo/naver_login.png' %}" alt=""></a>
-                        <a href=""><img src="{% static 'images/logo/facebook_login.png' %}" alt=""></a>
+                        <a href="{% provider_login_url 'google' %}"><img src="{% static 'images/logo/google_login.png' %}" alt=""></a>
+                        <a href="{% provider_login_url 'kakao' %}"><img src="{% static 'images/logo/kakao_login.png' %}" alt=""></a>
+                        <a href="{% provider_login_url 'naver' %}"><img src="{% static 'images/logo/naver_login.png' %}" alt=""></a>
+                        <a href="{% provider_login_url 'facebook' %}"><img src="{% static 'images/logo/facebook_login.png' %}" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -72,7 +74,7 @@
                         <li class="header_right_search"><a href="#"><i class="xi-search"></i>검색</a></li>
                         <li class="header_right_like"><a href="#"><i class="xi-heart-o"></i>찜</a></li>
                         {% if user.is_authenticated %}
-                        <li class="header_right_login"><a href="{% url 'logout' %}">로그아웃</a></li>
+                        <li id= "open_login" class="header_right_login"><a href="{% url 'logout' %}">로그아웃</a></li>
                         {% else %}
                         <li id= "open_login" class="header_right_login"><a href="#">로그인</a></li>
                         {% endif %}

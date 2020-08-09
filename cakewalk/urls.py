@@ -28,5 +28,5 @@ urlpatterns = [
     path('like/<int:product_id>', main.views.product_like, name='like'),
     path('login/', member.views.login , name='login'),
     path('logout/', member.views.logout , name='logout'),
-    
+    path('accounts/', include('allauth.urls')),
 ]

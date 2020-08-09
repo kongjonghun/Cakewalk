@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -40,6 +41,16 @@ INSTALLED_APPS = [
     'main.apps.MainConfig',
     'member.apps.MemberConfig',
     'import_export',
+    # allauth
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    # provider
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.kakao',
+    'allauth.socialaccount.providers.naver',
+    'allauth.socialaccount.providers.facebook',
+ 
 ]
 
 MIDDLEWARE = [
@@ -101,8 +112,16 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+AUTHENTICATION_BACKENDS=(
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+SITE_ID = 1
 
 
+LOGIN_REDIRECT_URL = 'index'# 로그인 후 리디렉션할 페이지
+ACCOUNT_LOGOUT_REDIRECT_URL = "index"# 로그아웃 후 리디렉션 할 페이지
+ACCOUNT_LOGOUT_ON_GET = True
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
